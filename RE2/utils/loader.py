@@ -29,7 +29,7 @@ def load_data(data_dir, split=None):
     for file in files:
         with open(file) as f:
             for line in f:
-                text1, text2, label = line.rstrip().split('\t')   #分隔开所有Tab间隔，空格键不分割
+                text1, text2, label = line.rstrip().split('\t')   #删除 string 字符串末尾的指定字符（默认为空格）;分隔开所有Tab间隔，空格键不分割
                 data.append({
                     'text1': text1,
                     'text2': text2,
