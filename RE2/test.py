@@ -23,7 +23,7 @@ def main(args, test_file, vocab_file, embeddings_file, pretrained_file, max_leng
     # Retrieving model parameters from checkpoint.
     embeddings = load_embeddings(embeddings_file)
     print("\t* Loading test data...")    
-    test_data = LCQMC_Dataset(test_file, vocab_file, max_length)
+    test_data = LCQMC_Dataset(test_file, vocab_file, max_length)   # data format
     test_loader = DataLoader(test_data, shuffle=True, batch_size=batch_size)
     print("\t* Building model...")
     model = RE2(args, embeddings, device=device).to(device)
